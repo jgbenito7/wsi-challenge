@@ -4,16 +4,9 @@ Simple webpage built using React.js that renders product images and details.
 
 Example:
 
-![website example](app/assets/images/site_example "website example")
+![website example](site_example.png "website example")
 
-## To-Do
-
-- [x] Implement Web Page According To Spec
-- [x] Add Sorting Capability
-- [x] Add Tests
-- [ ] Cleanup
-- [ ] Fix Production Building
-- [ ] Move Server Variables to .env
+The project was made using [react-webpack-boilerplate](https://github.com/KleoPetroff/react-webpack-boilerplate) as a starting point.
 
 ## Starting the dev server
 
@@ -28,3 +21,11 @@ Example:
 - `npm clean` - delete the dist folder
 - `npm test` - run all tests
 - `npm run test:watch` - run all tests in watch mode
+
+## To-Do
+
+- [x] Implement Web Page According To Spec
+- [x] Add Sorting Capability
+- [x] Add Tests
+- [ ] Fix Production Building
+- [ ] Move Server Variables to .env
