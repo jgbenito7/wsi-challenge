@@ -6,8 +6,10 @@ Simple webpage built using React.js that renders product images and details.
 
 - [x] Implement Web Page According To Spec
 - [x] Add Sorting Capability
-- [ ] Add Tests
+- [x] Add Tests
 - [ ] Cleanup
+- [ ] Fix Production Building
+- [ ] Move Server Variables to .env
 
 ## Starting the dev server
 
@@ -20,6 +22,5 @@ Simple webpage built using React.js that renders product images and details.
 
 - `npm start` - start the dev server
 - `npm clean` - delete the dist folder
-- `npm run production` - create a production ready build in `dist` folder
 - `npm test` - run all tests
 - `npm run test:watch` - run all tests in watch mode
