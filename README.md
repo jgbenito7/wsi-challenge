@@ -2,6 +2,10 @@
 
 Simple webpage built using React.js that renders product images and details.
 
+Example:
+
+![website example](app/assets/images/site_example "website example")
+
 ## To-Do
 
 - [x] Implement Web Page According To Spec
