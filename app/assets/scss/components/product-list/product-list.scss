@@ -1,0 +1,12 @@
+.product-list
+{
+  margin: auto;
+  max-width: 1400px;
+}
+
+.product-list__items
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}

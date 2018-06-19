@@ -1,8 +1,9 @@
 @import 'components/header';
 @import 'components/body';
-@import 'components/product';
-@import 'components/product-list';
-@import 'components/carousel';
+@import 'components/product-list/product';
+@import 'components/product-list/product-list';
+@import 'components/product-list/carousel';
+@import 'components/product-list/header';
 
 $color: #262828;
 

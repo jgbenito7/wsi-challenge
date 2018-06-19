@@ -24,36 +24,39 @@ class Product extends React.Component {
           'product--carousel': this.state.carouselActive
         })}
       >
-        <div className='product__carousel'>
-          <Carousel
-            active={this.state.carouselActive}
-            images={item.images}
-            onClose={this.setCarouselInactive}
-          />
-        </div>
-        <div className='product__overlay'>
-          <button
-            className='product__overlay-button'
-            onClick={this.setCarouselActive}
-          >
-            <img
-              className='product__overlay-icon'
-              src={albumsIcon}
-              alt='album'
+        <div className='product-wrap'>
+          <div className='product__carousel'>
+            <Carousel
+              active={this.state.carouselActive}
+              images={item.images}
+              onClose={this.setCarouselInactive}
             />
-          </button>
-        </div>
-        <img
-          className='product__hero'
-          alt='main product image'
-          src={item.hero.href}
-        />
-        <div className='product__name'>
-          <h2>{item.name}</h2>
-        </div>
-        <div className='product__footer'>
-          <div className='product__price'>
-            {`$${item.priceRange.selling.high}`}
+          </div>
+          <div className='product__overlay'>
+            <button
+              className='product__overlay-button'
+              onClick={this.setCarouselActive}
+            >
+              <img
+                className='product__overlay-icon'
+                src={albumsIcon}
+                alt='album'
+              />
+              View More Images
+            </button>
+          </div>
+          <img
+            className='product__hero'
+            alt='main product image'
+            src={item.hero.href}
+          />
+          <div className='product__name'>
+            <h2 dangerouslySetInnerHTML={{ __html: item.name }} />
+          </div>
+          <div className='product__footer'>
+            <div className='product__price'>
+              {`$${item.priceRange.selling.high}`}
+            </div>
           </div>
         </div>
       </div>
