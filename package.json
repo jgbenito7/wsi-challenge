@@ -12,6 +12,14 @@
   },
   "author": "Joey Gomez-Benito <jgbenito7@gmail.com>",
   "license": "MIT",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jestWebpackResolver": {
+    "webpackConfig": "./webpack.config.js"
+  },
   "jest": {
     "setupFiles": [
       "<rootDir>/config/jest/shim.js"
@@ -28,7 +36,8 @@
     ],
     "transform": {
       "\\.js$": "babel-jest"
-    }
+    },
+    "resolver": "jest-webpack-resolver"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -71,6 +80,7 @@
     "html-webpack-plugin": "3.2.0",
     "husky": "0.15.0-rc.2",
     "jest": "22.1.0",
+    "jest-webpack-resolver": "^0.3.0",
     "node-sass": "4.9.0",
     "open-browser-webpack-plugin": "0.0.5",
     "react-addons-test-utils": "15.6.2",

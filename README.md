@@ -5,7 +5,7 @@ Simple webpage built using React.js that renders product images and details.
 ## To-Do
 
 - [x] Implement Web Page According To Spec
-- [ ] Add Sorting Capability
+- [x] Add Sorting Capability
 - [ ] Add Tests
 - [ ] Cleanup
 

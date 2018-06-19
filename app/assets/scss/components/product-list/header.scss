@@ -2,7 +2,13 @@
 {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 15px;
   width: 100%;
+}
+
+.product-list__header-left-wrap h1
+{
+  font-size: 26px;
 }
 
 .product-list__header-right-wrap
