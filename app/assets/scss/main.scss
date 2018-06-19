@@ -1,5 +1,26 @@
+@import 'components/header';
+@import 'components/body';
+@import 'components/product';
+@import 'components/product-list';
+@import 'components/carousel';
+
 $color: #262828;
 
 body {
   color: $color;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button
+{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled
+{
+  opacity: 0.5;
 }

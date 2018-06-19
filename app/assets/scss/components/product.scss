@@ -1,0 +1,133 @@
+.product
+{
+  border: 1px solid rgba(57, 63, 72, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 32%;
+}
+
+.product__image
+{
+  height: 100%;
+  width: 100%;
+}
+
+.product__name
+{
+  background: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+  left: 0;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  transition: top 0.5s linear;
+  overflow: hidden;  
+  width: 100%;
+}
+
+.product__name h2
+{
+  color: rgb(57, 63, 72);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product__footer
+{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transition: bottom 0.2s linear;
+  width: 100%;
+}
+
+.product__price
+{
+  background: rgba(42, 37, 37, 0.8);
+  bottom: 20px;
+  color: white;
+  font-size: 18px;
+  left: 10px;
+  min-width: 40px;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+}
+
+.product__overlay
+{
+  align-items: center;
+  background: rgba(50, 50, 50, 0.3);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.product--carousel .product__overlay
+{
+  display: none;
+}
+
+.product:hover .product__overlay
+{
+  opacity: 1;
+}
+
+.product:hover .carousel__back-button
+{
+  left: 3px;
+}
+
+.product:hover .carousel__next-button
+{
+  right: 3px;
+}
+
+.product__overlay-icon
+{
+  height: 60px;
+  width: 60px;
+}
+
+.product__carousel
+{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.product--carousel .product__carousel
+{
+  display: block;
+}
+
+.product__hero
+{
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .product {
+    width: 100%;
+  } 
+}

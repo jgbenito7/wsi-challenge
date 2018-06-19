@@ -1,25 +1,25 @@
-const { resolve } = require('path');
+const { resolve } = require('path')
 
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://localhost:9000',
     'webpack/hot/only-dev-server',
     './main.js',
-    './assets/scss/main.scss',
+    './assets/scss/main.scss'
   ],
 
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname, 'dist'),
-    publicPath: '',
+    publicPath: ''
   },
 
   context: resolve(__dirname, 'app'),
@@ -28,44 +28,45 @@ const config = {
     hot: true,
     contentBase: resolve(__dirname, 'build'),
     historyApiFallback: true,
-    publicPath: '/'
+    publicPath: '/',
+    port: 9000
   },
-  
+
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [resolve(__dirname, 'app'), 'node_modules']
   },
 
   module: {
     rules: [
       {
-        enforce: "pre",
         test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
+        loaders: ['babel-loader'],
+        exclude: /node_modules/
       },
       {
-        test: /\.jsx?$/,
-        loaders: [
-          'babel-loader',
-        ],
-        exclude: /node_modules/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              query: {
-                sourceMap: false,
+        use: ['css-hot-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                query: {
+                  sourceMap: false
+                }
               },
-            },
-          ],
-          publicPath: '../'
-        })),
+              'postcss-loader'
+            ],
+            publicPath: '../'
+          })
+        )
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -75,10 +76,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'image/png',
-              name: 'images/[name].[ext]',
+              name: 'images/[name].[ext]'
             }
           }
-        ],
+        ]
       },
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
@@ -89,7 +90,7 @@ const config = {
               name: 'fonts/[name].[ext]'
             }
           }
-        ],
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -99,10 +100,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'application/font-woff',
-              name: 'fonts/[name].[ext]',
+              name: 'fonts/[name].[ext]'
             }
           }
-        ],
+        ]
       },
       {
         test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
@@ -112,10 +113,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'application/octet-stream',
-              name: 'fonts/[name].[ext]',
+              name: 'fonts/[name].[ext]'
             }
           }
-        ],
+        ]
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -125,11 +126,11 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'image/svg+xml',
-              name: 'images/[name].[ext]',
+              name: 'images/[name].[ext]'
             }
           }
-        ],
-      },
+        ]
+      }
     ]
   },
 
@@ -139,16 +140,20 @@ const config = {
       options: {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),
-          cache: false,
+          cache: false
         }
-      },
+      }
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
+    new ExtractTextPlugin({
+      filename: './styles/style.css',
+      disable: false,
+      allChunks: true
+    }),
     new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-};
+    new OpenBrowserPlugin({ url: 'http://localhost:9000' }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
+}
 
-module.exports = config;
+module.exports = config

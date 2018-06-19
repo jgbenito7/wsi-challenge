@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-boilerplate",
-  "version": "2.1.0",
-  "description": "Minimalistic ES6 React boilerplate",
+  "name": "wsi-challenge",
+  "version": "0.0.0",
+  "description": "WSI Coding Challenge",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -10,11 +10,9 @@
     "lint": "eslint ./app/**/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage",
-    "precommit": "cross-env npm run lint && npm test",
-    "prepush": "cross-env npm run lint && npm test"
+    "coverage": "jest --coverage"
   },
-  "author": "Kliment Petrov <kleopetroff@gmail.com>",
+  "author": "Joey Gomez-Benito <jgbenito7@gmail.com>",
   "license": "MIT",
   "jest": {
     "setupFiles": [
@@ -35,7 +33,10 @@
     }
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "cross-env": "5.2.0",
+    "postcss-loader": "^2.1.5",
+    "pure-react-carousel": "^1.12.3",
     "react": "16.4.1",
     "react-dom": "16.4.1",
     "react-hot-loader": "4.3.2",
