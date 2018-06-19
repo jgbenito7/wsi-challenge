@@ -1,16 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from '../components/App';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import * as Pages from '../pages'
 
 const Root = () => {
+  console.log('i am root')
   return (
     <Router>
       <Switch>
-        <Route path="/" component={App} exact />
+        <Route path='/' component={Pages.ProductList} exact />
       </Switch>
     </Router>
-  );
-};
+  )
+}
 
-export default Root;
-
+export default Root
